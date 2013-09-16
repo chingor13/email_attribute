@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/chingor13/email_attribute"
   s.summary     = "ActiveModel field serializer for handling email addresses via Mail gem"
   s.description = "ActiveModel field serializer for handling email addresses via Mail gem"
+  s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
