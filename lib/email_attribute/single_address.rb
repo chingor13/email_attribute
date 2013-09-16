@@ -2,7 +2,12 @@ module EmailAttribute
   class SingleAddress < String
     def initialize(str = "")
       @address = Mail::Address.new(str.to_s) rescue nil
-      super(@address.and.format || str || "")
+      if @address
+        value = @address.format
+      else
+        value = str || ""
+      end
+      super(value)
     end
 
     # rebuilds the Mail::Address if necessary

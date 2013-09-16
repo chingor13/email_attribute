@@ -5,11 +5,16 @@ module EmailAttribute
     delegate :length, :size, :each, :to => :addresses
 
     def initialize(email_addresses)
+      email_addresses = email_addresses.join("; ") if email_addresses.respond_to?(:join)
       @addresses = begin
         Mail::AddressList.new(email_addresses).addresses.map(&:format)
       rescue
         manual_parse(email_addresses)
       end
+    end
+
+    def inspect
+      to_s
     end
 
     def to_s
@@ -48,4 +53,5 @@ module EmailAttribute
       end
     end
   end
+
 end
