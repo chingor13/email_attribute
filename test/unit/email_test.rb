@@ -3,7 +3,7 @@ require 'test_helper'
 class EmailTest < ActiveSupport::TestCase
 
   self.use_transactional_fixtures = true
-  fixtures :all
+  fixtures :emails
 
   test "loading from db" do
     email = Email.find(ActiveRecord::Fixtures.identify(:existing))
