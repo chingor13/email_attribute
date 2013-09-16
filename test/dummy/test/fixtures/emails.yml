@@ -1,0 +1,5 @@
+existing:
+  to: "foo@bar.com; Jeff Ching <ching.jeff@gmail.com>"
+  from: "No Reply <noreply@foo.com>"
+  subject: "Automatic notification"
+  body: "Something's ready"
