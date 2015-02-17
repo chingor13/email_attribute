@@ -29,14 +29,13 @@ class SingleAddressTest < ActiveSupport::TestCase
     end
 
     should "dump empty values as nil" do
-      list = EmailAttribute::SingleAddress.new(nil)
-      assert_nil(EmailAttribute::SingleAddress.dump(list))
+      single = EmailAttribute::SingleAddress.new(nil)
+      assert_nil(EmailAttribute::SingleAddress.dump(single))
     end
 
-    should "load nil values as empty lists" do
-      list = EmailAttribute::SingleAddress.load(nil)
-      assert_equal(0, list.length)
-      assert_equal("", list.to_s)
+    should "load nil values as empty addresses" do
+      single = EmailAttribute::SingleAddress.load(nil)
+      assert_equal("", single)
     end
     
     should 'responds to strip for strip_attributes gem' do
