@@ -35,7 +35,7 @@ module EmailAttribute
 
     class << self
       def dump(email_address)
-        return nil if email_address.nil?
+        return nil if email_address.blank?
 
         email_address.to_s
       end
