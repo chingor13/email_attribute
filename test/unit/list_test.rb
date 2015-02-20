@@ -33,6 +33,17 @@ class ListTest < ActiveSupport::TestCase
       assert_equal("", list.to_s)
     end
 
+    should "dump empty values as nil" do
+      list = EmailAttribute::List.new(nil)
+      assert_nil(EmailAttribute::List.dump(list))
+    end
+
+    should "load nil values as empty lists" do
+      list = EmailAttribute::List.load(nil)
+      assert_equal(0, list.length)
+      assert_equal("", list.to_s)
+    end
+
     should "handle array values" do
       list = EmailAttribute::List.new(["foo@bar.com", "blah@blabber.com"])
       assert_equal(2, list.length)
